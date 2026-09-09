@@ -2,6 +2,8 @@ New-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress "198.168.1.2" -PrefixLeng
 
 Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses @("198.168.1.2")   
 
+Rename-Computer -NewName "DC1" -Restart -Force   
+
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools   
 
 Import-Module ADDSDeployment
